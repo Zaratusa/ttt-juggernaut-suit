@@ -15,24 +15,24 @@ AddCSLuaFile("shared.lua")
 
 include('shared.lua')
 
-CreateConVar("ttt_juggernautsuit_detective_loadout", 0, {FCVAR_SERVER_CAN_EXECUTE, FCVAR_ARCHIVE}, "Should Detectives have the Juggernaut Suit in their loadout?", 0, 1)
-CreateConVar("ttt_juggernautsuit_traitor_loadout", 0, {FCVAR_SERVER_CAN_EXECUTE, FCVAR_ARCHIVE}, "Should Traitors have the Juggernaut Suit in their loadout?", 0, 1)
+CreateConVar("ttt_juggernautsuit_detective_loadout", 0, FCVAR_ARCHIVE, "Should Detectives have the Juggernaut Suit in their loadout?")
+CreateConVar("ttt_juggernautsuit_traitor_loadout", 0, FCVAR_ARCHIVE, "Should Traitors have the Juggernaut Suit in their loadout?")
 
-local model = CreateConVar("ttt_juggernautsuit_model", "models/player/urban.mdl", {FCVAR_SERVER_CAN_EXECUTE, FCVAR_ARCHIVE}, "The player model for the Juggernaut Suit.")
+local model = CreateConVar("ttt_juggernautsuit_model", "models/player/urban.mdl", {FCVAR_ARCHIVE, FCVAR_NOTIFY}, "The player model for the Juggernaut Suit.")
 
-local damage_factor_explosion = CreateConVar("ttt_juggernautsuit_damage_explosion", 0.20, {FCVAR_SERVER_CAN_EXECUTE, FCVAR_ARCHIVE}, "The explosion damage multiplier for the Juggernaut Suit.")
-local maximum_damage_explosion = CreateConVar("ttt_juggernautsuit_maxdamage_explosion", 50, {FCVAR_SERVER_CAN_EXECUTE, FCVAR_ARCHIVE}, "The maximum explosion damage inflicting the Juggernaut Suit.")
+local damage_factor_explosion = CreateConVar("ttt_juggernautsuit_damage_explosion", 0.20, {FCVAR_ARCHIVE, FCVAR_NOTIFY}, "The explosion damage multiplier for the Juggernaut Suit.")
+local maximum_damage_explosion = CreateConVar("ttt_juggernautsuit_maxdamage_explosion", 50, {FCVAR_ARCHIVE, FCVAR_NOTIFY}, "The maximum explosion damage inflicting the Juggernaut Suit.")
 
-local damage_factor_fire = CreateConVar("ttt_juggernautsuit_damage_fire", 0.35, {FCVAR_SERVER_CAN_EXECUTE, FCVAR_ARCHIVE}, "The fire damage multiplier for the Juggernaut Suit.")
-local maximum_damage_fire = CreateConVar("ttt_juggernautsuit_maxdamage_fire", 5, {FCVAR_SERVER_CAN_EXECUTE, FCVAR_ARCHIVE}, "The maximum fire damage inflicting the Juggernaut Suit.")
+local damage_factor_fire = CreateConVar("ttt_juggernautsuit_damage_fire", 0.35, {FCVAR_ARCHIVE, FCVAR_NOTIFY}, "The fire damage multiplier for the Juggernaut Suit.")
+local maximum_damage_fire = CreateConVar("ttt_juggernautsuit_maxdamage_fire", 5, {FCVAR_ARCHIVE, FCVAR_NOTIFY}, "The maximum fire damage inflicting the Juggernaut Suit.")
 
-local damage_bullet = CreateConVar("ttt_juggernautsuit_damage_bullet", 0.80, {FCVAR_SERVER_CAN_EXECUTE, FCVAR_ARCHIVE}, "The bullet damage multiplier for the Juggernaut Suit.")
-local damage_factor_shock = CreateConVar("ttt_juggernautsuit_damage_shock", 0.60, {FCVAR_SERVER_CAN_EXECUTE, FCVAR_ARCHIVE}, "The shock damage multiplier for the Juggernaut Suit.")
-local damage_factor_radiation = CreateConVar("ttt_juggernautsuit_damage_radiation", 0.60, {FCVAR_SERVER_CAN_EXECUTE, FCVAR_ARCHIVE}, "The radiation damage multiplier for the Juggernaut Suit.")
-local damage_factor_crowbar = CreateConVar("ttt_juggernautsuit_damage_crowbar", 0.80, {FCVAR_SERVER_CAN_EXECUTE, FCVAR_ARCHIVE}, "The crowbar damage multiplier for the Juggernaut Suit.")
-local damage_factor_slash = CreateConVar("ttt_juggernautsuit_damage_slash", 0.75, {FCVAR_SERVER_CAN_EXECUTE, FCVAR_ARCHIVE}, "The slash damage multiplier for the Juggernaut Suit.")
-local damage_factor_fall = CreateConVar("ttt_juggernautsuit_damage_fall", 1.20, {FCVAR_SERVER_CAN_EXECUTE, FCVAR_ARCHIVE}, "The fall damage multiplier for the Juggernaut Suit.")
-local damage_factor_drown = CreateConVar("ttt_juggernautsuit_damage_drown", 1.20, {FCVAR_SERVER_CAN_EXECUTE, FCVAR_ARCHIVE}, "The drowning damage multiplier for the Juggernaut Suit.")
+local damage_bullet = CreateConVar("ttt_juggernautsuit_damage_bullet", 0.80, {FCVAR_ARCHIVE, FCVAR_NOTIFY}, "The bullet damage multiplier for the Juggernaut Suit.")
+local damage_factor_shock = CreateConVar("ttt_juggernautsuit_damage_shock", 0.60, {FCVAR_ARCHIVE, FCVAR_NOTIFY}, "The shock damage multiplier for the Juggernaut Suit.")
+local damage_factor_radiation = CreateConVar("ttt_juggernautsuit_damage_radiation", 0.60, {FCVAR_ARCHIVE, FCVAR_NOTIFY}, "The radiation damage multiplier for the Juggernaut Suit.")
+local damage_factor_crowbar = CreateConVar("ttt_juggernautsuit_damage_crowbar", 0.80, {FCVAR_ARCHIVE, FCVAR_NOTIFY}, "The crowbar damage multiplier for the Juggernaut Suit.")
+local damage_factor_slash = CreateConVar("ttt_juggernautsuit_damage_slash", 0.75, {FCVAR_ARCHIVE, FCVAR_NOTIFY}, "The slash damage multiplier for the Juggernaut Suit.")
+local damage_factor_fall = CreateConVar("ttt_juggernautsuit_damage_fall", 1.20, {FCVAR_ARCHIVE, FCVAR_NOTIFY}, "The fall damage multiplier for the Juggernaut Suit.")
+local damage_factor_drown = CreateConVar("ttt_juggernautsuit_damage_drown", 1.20, {FCVAR_ARCHIVE, FCVAR_NOTIFY}, "The drowning damage multiplier for the Juggernaut Suit.")
 
 --[[Perk logic]]--
 hook.Add("EntityTakeDamage", "TTTJuggernautSuit", function(ent, dmginfo)

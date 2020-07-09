@@ -1,9 +1,9 @@
 -- author "Zaratusa"
 -- contact "http://steamcommunity.com/profiles/76561198032479768"
 
-CreateConVar("ttt_juggernautsuit_detective", 1, {FCVAR_SERVER_CAN_EXECUTE, FCVAR_ARCHIVE, FCVAR_REPLICATED}, "Should Detectives be able to buy the Juggernaut Suit?", 0, 1)
-CreateConVar("ttt_juggernautsuit_traitor", 0, {FCVAR_SERVER_CAN_EXECUTE, FCVAR_ARCHIVE, FCVAR_REPLICATED}, "Should Traitors be able to buy the Juggernaut Suit?", 0, 1)
-local speed = CreateConVar("ttt_juggernautsuit_speed", 0.80, {FCVAR_SERVER_CAN_EXECUTE, FCVAR_ARCHIVE, FCVAR_REPLICATED}, "The speed multiplier for the Juggernaut Suit.")
+CreateConVar("ttt_juggernautsuit_detective", 1, SERVER and {FCVAR_ARCHIVE, FCVAR_REPLICATED} or FCVAR_REPLICATED, "Should Detectives be able to buy the Juggernaut Suit?")
+CreateConVar("ttt_juggernautsuit_traitor", 0, SERVER and {FCVAR_ARCHIVE, FCVAR_REPLICATED} or FCVAR_REPLICATED, "Should Traitors be able to buy the Juggernaut Suit?")
+local speed = CreateConVar("ttt_juggernautsuit_speed", 0.80, SERVER and {FCVAR_ARCHIVE, FCVAR_REPLICATED} or FCVAR_REPLICATED, "The speed multiplier for the Juggernaut Suit.")
 
 EQUIP_JUGGERNAUT_SUIT = (GenerateNewEquipmentID and GenerateNewEquipmentID()) or 128
 
