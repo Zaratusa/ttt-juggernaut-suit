@@ -13,6 +13,8 @@
 AddCSLuaFile("cl_init.lua")
 AddCSLuaFile("shared.lua")
 
+resource.AddWorkshop("652046425") -- this addon
+
 include('shared.lua')
 
 CreateConVar("ttt_juggernautsuit_detective_loadout", 0, FCVAR_ARCHIVE, "Should Detectives have the Juggernaut Suit in their loadout?")
