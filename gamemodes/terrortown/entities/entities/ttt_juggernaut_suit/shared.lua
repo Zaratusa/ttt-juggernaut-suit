@@ -3,6 +3,8 @@
 
 CreateConVar("ttt_juggernautsuit_detective", 1, SERVER and {FCVAR_ARCHIVE, FCVAR_REPLICATED} or FCVAR_REPLICATED, "Should Detectives be able to buy the Juggernaut Suit?")
 CreateConVar("ttt_juggernautsuit_traitor", 0, SERVER and {FCVAR_ARCHIVE, FCVAR_REPLICATED} or FCVAR_REPLICATED, "Should Traitors be able to buy the Juggernaut Suit?")
+CreateConVar("ttt_juggernautsuit_detective_loadout", 0, SERVER and FCVAR_ARCHIVE or 0, "Should Detectives have the Juggernaut Suit in their loadout?")
+CreateConVar("ttt_juggernautsuit_traitor_loadout", 0, SERVER and FCVAR_ARCHIVE or 0, "Should Traitors have the Juggernaut Suit in their loadout?")
 local speed = CreateConVar("ttt_juggernautsuit_speed", 0.80, SERVER and {FCVAR_ARCHIVE, FCVAR_REPLICATED} or FCVAR_REPLICATED, "The speed multiplier for the Juggernaut Suit.")
 
 EQUIP_JUGGERNAUT_SUIT = (GenerateNewEquipmentID and GenerateNewEquipmentID()) or 128

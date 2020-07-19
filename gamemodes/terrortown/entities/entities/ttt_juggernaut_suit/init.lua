@@ -17,9 +17,6 @@ resource.AddWorkshop("652046425") -- this addon
 
 include('shared.lua')
 
-CreateConVar("ttt_juggernautsuit_detective_loadout", 0, FCVAR_ARCHIVE, "Should Detectives have the Juggernaut Suit in their loadout?")
-CreateConVar("ttt_juggernautsuit_traitor_loadout", 0, FCVAR_ARCHIVE, "Should Traitors have the Juggernaut Suit in their loadout?")
-
 local model = CreateConVar("ttt_juggernautsuit_model", "models/player/urban.mdl", {FCVAR_ARCHIVE, FCVAR_NOTIFY}, "The player model for the Juggernaut Suit.")
 
 local damage_factor_explosion = CreateConVar("ttt_juggernautsuit_damage_explosion", 0.20, {FCVAR_ARCHIVE, FCVAR_NOTIFY}, "The explosion damage multiplier for the Juggernaut Suit.")
